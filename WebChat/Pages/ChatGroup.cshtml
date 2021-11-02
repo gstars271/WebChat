@@ -1,0 +1,50 @@
+﻿@page
+@model WebChat.Pages.ChatModel
+@{
+    ViewData["Title"] = "Chat";
+}
+
+<h3>Chat to room</h3>
+<div class="container">
+    <div class="row form-group">
+        <div class="col-2">
+            <select class="form-select" id="roomSelect" aria-label="Default select example">
+                <option selected>Select room</option>
+                <option value="1">Room 1</option>
+                <option value="2">Room 2</option>
+            </select>
+        </div>
+        <div class="col-2">
+            <input type="button" class="btn btn-info" id="addgroup" value="Add to room" />
+        </div>
+        <div class="col-2">
+            <input type="button" class="btn btn-secondary" id="leavegroup" value="Leave room" />
+        </div>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-2">Message</div>
+        <div class="col-4"><input type="text" id="txtmessage" /></div>
+    </div>
+
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-6">
+            <input type="button" class="btn btn-primary" id="sendToRoom" value="Send to room" />
+        </div>
+    </div>
+</div>
+
+    <div class="row">
+        <div class="col-12">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <ul id="ulmessages"></ul>
+        </div>
+    </div>
+
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/chatRoom.js"></script>
